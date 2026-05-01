@@ -10,18 +10,11 @@ public class App {
             subtotal += prices[i] * qty[i];
         }
 
-        // discount by customer type
-        if (customerType.equals("VIP")) {
-            subtotal = subtotal * 0.8;
-        }
+        DiscountService discountService = new DiscountService();
+        subtotal = discountService.apply(subtotal, customerType, discountCode);
 
-        // discount code
-        if (discountCode.equals("SAVE10")) {
-            subtotal = subtotal * 0.9;
-        }
-
-        // tax 15%
-        double tax = subtotal * 0.15;
+        TaxService taxService = new TaxService();
+        double tax = taxService.apply(subtotal);
 
         return subtotal + tax;
     }
