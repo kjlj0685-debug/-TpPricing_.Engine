@@ -2,7 +2,7 @@ package org.example;
 
 public class App {
 
-    public static double calculate(double[] prices, int[] qty, String customerType, String discountCode) {
+    public static double calculate(double[] prices, int[] qty, String type, String code) {
 
         double subtotal = 0;
 
@@ -10,8 +10,17 @@ public class App {
             subtotal += prices[i] * qty[i];
         }
 
-        DiscountService discountService = new DiscountService();
-        subtotal = discountService.apply(subtotal, customerType, discountCode);
+        DiscountStrategy discount;
+
+        if (type.equals("VIP")) {
+            discount = new VIPDiscount();
+        } else if (code.equals("SAVE10")) {
+            discount = new SAVE10Discount();
+        } else {
+            discount = amount -> amount;
+        }
+
+        subtotal = discount.apply(subtotal);
 
         TaxService taxService = new TaxService();
         double tax = taxService.apply(subtotal);
