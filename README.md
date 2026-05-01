@@ -61,41 +61,67 @@ Unit tests are implemented using **JUnit 5**.
 - Combined discounts (VIP + SAVE10)
 - Multiple items calculation
 
-### Run tests:
-```bash id="run_tests"
-       ./gradlew test
+# 🚀 Discount Calculation System (Java + Gradle)
 
+A clean and modular Java project demonstrating **Design Patterns**, **Refactoring**, and **Unit Testing**.
 
-### 🚀 Build & Run
+---
 
-### Build project:
+## 🔧 Build & Run
+
+### Run tests
+
 ```bash
-         ./gradlew build
+./gradlew test
+```
 
-🔧 Refactoring Highlights
+### Build project
 
-- This project was improved through iterative refactoring:
+```bash
+./gradlew build
+```
 
-    - Separated business logic into services
-    -  Introduced Strategy Pattern for discounts
-    - Improved code readability and maintainability
-    - Fixed combined discount calculation logic
-    - Reduced code duplication
+---
 
-📊 Example Calculation
-Input:
-   Items: 100 + 50
-   Quantities: 1 + 2
-    Customer Type: VIP
-     Coupon: SAVE10
-Process:
-   Subtotal = 200
-   VIP discount (20%) → 160
-   SAVE10 discount (10%) → 144
-   Tax (15%) → 165.6
-Output:
-   165.6
-📁 Project Structure
+## 🧠 Refactoring Highlights
+
+This project was improved through iterative refactoring:
+
+* Separated business logic into services
+* Implemented **Strategy Pattern** for discounts
+* Improved code readability and maintainability
+* Fixed combined discount calculation logic
+* Reduced code duplication
+
+---
+
+## 📊 Example Calculation
+
+**Input:**
+
+* Items: 100 + 50
+* Quantities: 1 + 2
+* Customer Type: VIP
+* Coupon: SAVE10
+
+**Process:**
+
+* Subtotal = 200
+* VIP discount (20%) → 160
+* SAVE10 discount (10%) → 144
+* Tax (15%) → 165.6
+
+**Output:**
+
+```
+165.6
+```
+
+---
+
+## 📁 Project Structure
+
+```
 app/
  └── src/
      ├── main/java/org/example/
@@ -107,37 +133,40 @@ app/
      │   └── DiscountService.java
      └── test/java/org/example/
          └── AppTest.java
+```
 
+---
 
-   👨‍💻 Git Workflow
+## 🔄 Git Workflow
 
-The project follows a structured Git workflow:
+* `feat:` Add initial test cases
+* `refactor:` Apply Strategy Pattern
+* `test:` Add comprehensive unit tests
+* `refactor:` Improve structure and separation of concerns
 
-   feat: Add initial test cases
-   refactor: Improve architecture using Strategy Pattern
-   test: Add comprehensive unit tests
-   refactor: Split responsibilities into services
+---
 
+## 🎯 Key Learning Outcomes
 
-     🎯 Key Learning Outcomes
+* Gradle build system
+* Unit testing with JUnit 5
+* Clean Code principles
+* Design Patterns (Strategy Pattern)
+* Refactoring techniques
+* Git workflow best practices
 
-   Gradle project setup and build system
-   Unit testing with JUnit 5
-   Clean Code principles
-   Design Patterns (Strategy Pattern)
-   Refactoring legacy code
-   Git version control workflow
+---
 
-📌 Author
+## 📌 Author
 
-Student Project – Java + Gradle + JUnit
-Software Engineering Lab Assignment
+**Kenza Sedouga**
+Master IoT Student
 
-🏁 Status
+---
 
-✔ Project Completed
+## 🏁 Project Status
+
+✔ Completed
 ✔ Tests Passing
 ✔ Refactored Architecture
 ✔ Ready for Submission
-🏁 ETUDIENT > 
-        KENZA SEDOUGA -iot master
