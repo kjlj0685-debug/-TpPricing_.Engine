@@ -10,20 +10,18 @@ public class App {
             subtotal += prices[i] * qty[i];
         }
 
-        DiscountStrategy discount;
-
+        // 1. VIP discount
         if (type.equals("VIP")) {
-            discount = new VIPDiscount();
-        } else if (code.equals("SAVE10")) {
-            discount = new SAVE10Discount();
-        } else {
-            discount = amount -> amount;
+            subtotal = subtotal * 0.8;
         }
 
-        subtotal = discount.apply(subtotal);
+        // 2. SAVE10 discount (بعد VIP)
+        if (code.equals("SAVE10")) {
+            subtotal = subtotal * 0.9;
+        }
 
-        TaxService taxService = new TaxService();
-        double tax = taxService.apply(subtotal);
+        // tax
+        double tax = subtotal * 0.15;
 
         return subtotal + tax;
     }
